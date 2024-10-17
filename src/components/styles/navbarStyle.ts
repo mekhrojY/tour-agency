@@ -4,7 +4,6 @@ import { styled } from "styled-components";
 // const bgImage = require();
 
 export const Container = styled.div`
-  background-color: red;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,14 +69,17 @@ export const Navlink = styled(Link)`
 `;
 
 interface BgWrapperProps {
-    $bgImage: string;
-    fullHeight?: boolean; // optional prop for full height
-  }
+  $bgImage: string;
+  fullHeight?: boolean; // optional prop for full height
+}
 
 export const BgWrapper = styled.div<BgWrapperProps>`
   margin-top: 0;
   position: relative;
-  height: ${(props) => (props.fullHeight ? '1008px' : '574px')}; /* Adjust based on your navbar height */
+  height: ${(props) =>
+    props.fullHeight
+      ? "1008px"
+      : "574px"}; /* Adjust based on your navbar height */
   /* height: calc(100vh - 60px); Adjust based on your navbar height */
   background-image: url(${(props) => props.$bgImage});
   background-size: cover;
